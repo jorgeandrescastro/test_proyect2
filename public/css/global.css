@@ -1,0 +1,194 @@
+body {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+    font-family: arial;
+    color: #2B3856;
+}
+
+.header {
+	width: 100%;
+	border-radius: 15px;
+	text-align: center;
+	background-color: #CAD5EF ;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	font-family: arial;
+	color: #2B3856;
+}
+
+/*General CSS Style*/
+.bold {
+	font-weight: bold;
+}
+
+.center {
+	text-align: center;
+}
+
+.title {
+    font-size: 14px;
+}
+
+.subtitle {
+    font-size: 12px;
+}
+
+.success {
+	color: green;
+}
+
+.failed {
+	color:red;
+}
+
+.left {
+	text-align: left;
+}
+
+.floatleft {
+	float: left;
+}
+
+.floatright {
+	float: right;
+}
+
+.right {
+	text-align: right;
+}
+
+.cursive {
+	font-style: italic;
+}
+
+.section {
+    background-color: #F4F9FE;
+    border: 1px solid #C2D8FE;
+    border-radius: 15px 0 15px 0;
+    float: left;
+    margin: 22px;
+    padding: 20px;
+    text-align: left;
+    width: 45%;
+}
+
+/*Table CSS Style*/
+table.list {
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+    border: 1px solid #E5EFF8;
+    width: 90%;
+}
+
+.list thead th{
+    background: none repeat scroll 0 0 #F4F9FE;
+    padding: 10px;
+    color: #2B3856;
+    font-family: arial;
+    text-align: center;
+}
+
+.list tbody td{
+    padding: 10px;
+    border-collapse: collapse;
+    border: 1px solid #E5EFF8;
+    font-family: arial;
+    text-align: center;
+}
+
+
+/*Button CSS Style*/
+.button {
+	-moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:6px 19px;
+	text-decoration:none;
+	text-shadow:1px -2px 0px #528ecc;
+}.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+	background-color:#378de5;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+
+/*Form CSS style*/
+form label {
+	font-size: 12px;
+}
+
+#create td {
+	text-align: left;
+	padding-top: 8px;
+}
+
+#create table, #edit table {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #F4F9FE;
+	border-radius: 10px;
+	border: 1px solid #C2D8FE;
+}
+
+#create .center {
+	text-align: center;
+}
+
+.errors {
+	margin: 0;
+    color: red;
+    font-size: 11px;
+}
+
+#assign td {
+	width: 50%;
+}
+
+#assign table {
+	width: 100%;
+	margin: 5px;
+}
+
+#assign select {
+	width: 100%;
+}
+
+
+/*Configuration scripts page styles*/
+.code {
+    background-color: white;
+    font-family: monospace;
+    padding: 6px;
+}
+
+/*CSS styles for advertisement link*/
+#adlink {
+    background-color: #F4F9FE;
+    border: 1px solid #C2D8FE;
+    border-radius: 15px 0 15px 0;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width: 80%;
+}
+

@@ -1,0 +1,51 @@
+<div class="center bold title">Advertisement Link for <?= $this->gamename; ?></div>
+<div class="center subtitle">Here you can construct the Advertisement link for this game.</div>
+<br/>
+<div class="subtitle" id="adlink">
+	<div class="center bold subtitle">Advertisement Link</div>
+	<br/><br/>
+	<div class="subtitle">Select the value of the parameters</div>
+	<?= $this->form; ?>
+	<br/><br/>
+	<div id="builturl" class="code"><?= $this->url; ?></div>
+</div>
+
+
+<script type="text/javascript">
+$(function()
+{
+	var url = "<?= $this->url; ?>" + '?';
+	var selectedpartner = "";
+	var selectedlanguage = "";
+	var enabled = "";
+	$("#partner").change(function()
+	{
+		if($("#partner").val() != 0)
+			selectedpartner = "partner=" + $("#partner").val() + "&";
+		else 
+			selectedpartner = "";
+		$("#builturl").html(url + selectedpartner + selectedlanguage + enabled);	
+	});
+	
+	$("#language").change(function()
+	{
+		if($("#language").val() != 0)
+			selectedlanguage = "lang=" + $("#language").val() + "&";
+		else
+			selectedlanguage = "";
+		$("#builturl").html(url + selectedpartner + selectedlanguage + enabled);	
+	});
+
+	$("#ad").change(function()
+	{
+		var isChecked =  $('#ad').is(':checked');
+		
+		if(isChecked)
+			enabled = "ad=enabled&";
+		else
+			enabled = "";
+		$("#builturl").html(url + selectedpartner + selectedlanguage + enabled);	
+	});
+
+});
+</script>

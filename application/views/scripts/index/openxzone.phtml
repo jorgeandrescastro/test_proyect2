@@ -1,0 +1,69 @@
+<div class="center bold title">OpenX Zones for <?= $this->gamename; ?></div>
+<div class="center subtitle">Here you can visualize the OpenX Zones of a game, and assign more if needed.</div>
+<br/>
+<div class="section subtitle" id="newOXZ">
+	<div class="center bold subtitle">Assign new OpenX Zones</div>
+	<br/>
+	<?php 
+	$message = "";
+	if(0 < strlen($this->message))
+	{
+		$class = $this->success? 'success' : 'failed';
+		$message = '<div class="title bold '.$class.'">'.$this->message.'</div>';
+	}
+	echo $message;
+	echo $this->form; 
+	?>
+</div>
+
+<div class="section subtitle" id="existingOXZ">
+	<div class="center bold subtitle">Existing Open X Zones</div>
+	<br/>
+	<table class="list">
+	<thead class="title">
+		<tr>
+			<th>Zone ID</th>
+			<th>Type</th>
+			<th>Hash</th>
+		</tr>
+	</thead>
+	<tbody class="subtitle">
+	<?php 
+	foreach ($this->openxzones as $zone	) {
+		echo "<tr>";
+		echo "<td>" . $zone->getZoneId() . "</td>";
+		echo "<td>" . $zone->getType() . "</td>";
+		echo "<td>" . $zone->getHash() . "</td>";
+		echo "</tr>";
+	}
+	?>
+	</tbody>
+</table>
+</div>
+
+<?php 
+$url = $this->url(array('controller' => 'async', 'action' => 'getzonesbyaffiliate'), null, true)
+?>
+
+<script type="text/javascript">
+$(function()
+{
+	$("#affiliate").change(function()
+	{
+		var selectedAffiliate = $("#affiliate").val();
+		$.post("<?= $url; ?>/id/" + selectedAffiliate , {}, 
+		function(response)
+		{
+			$("#zones").html(response);
+		});
+	});
+	
+	/*$("#assignBtn").click(function()
+	{
+		var selectedZones = $("#zones").val();
+		alert(selectedZones);
+		return;
+	});*/
+	
+});
+</script>

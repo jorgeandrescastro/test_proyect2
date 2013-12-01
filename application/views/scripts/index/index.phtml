@@ -1,0 +1,6 @@
+<div class="center bold title">Welcome to the Game Dashboard</div>
+<div class="center subtitle">Here you can find a list of the games</div>
+<br/>
+<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'create'));?>" class="button">Create new game</a>
+<br/><br/>
+<div><?php echo $this->partial('common/game_list.phtml', array('games' => $this->games)); ?></div>

@@ -1,0 +1,19 @@
+<div class="center bold title">Configuration Scripts for <?= $this->gamename; ?></div>
+<div class="center subtitle">Here you can find the scripts necessary to configure the game.</div>
+<div class="center subtitle">Please, place this lines in the specified files</div>
+<br/>
+<div class="section subtitle" id="deploy">
+	<div class="center bold subtitle">Deploy Script</div>
+	<br/><br/>
+	<div class="subtitle">Please, place the following code in the file: <span class="cursive">/var/local/html5-free/makefile</span> located in the Game Server</div>
+	<br/><br/>
+	<div class="code"><?= $this->deployScripts;?></div>
+</div>
+
+<div class="section subtitle" id="vhost">
+	<div class="center bold subtitle">VHost Configuration Scripts</div>
+	<br/><br/>
+	<div class="subtitle">Please, place the following code in the file: <span class="cursive">/etc/varnish/default.vcl</span> located in the Varnish Server</div>
+	<br/><br/>
+	<div class="code"><?= $this->vhostScripts;?></div>
+</div>

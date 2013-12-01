@@ -1,0 +1,20 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Game Dashboard</title>
+  <?php echo $this->headLink()->appendStylesheet('/css/global.css');
+  		echo $this->headScript()->appendFile('/js/jquery-1.7.2.min.js');
+  		echo $this->headScript()->appendFile('/js/jquery-ui-1.8.21.custom.min.js'); ?>
+</head>
+<body>
+<div class="header bold">
+	Game Dashboard
+</div>
+<br/>
+<div class="right" style="width:100px;"><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index'), null, true);?>" class="button" style="display:list-item">Home</a></div>
+<div class="right" style="width:100px; "><a href="<?php echo $this->url(array('controller' => 'authentication', 'action' => 'logout'), null, true);?>" class="button" style="display:list-item">Logout</a></div>
+<?php echo $this->layout()->content ?>
+ 
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="center bold title">Edit Game</div>
+<div class="center subtitle">Edit the fields you want to edit</div>
+<div class="center subtitle">Fields marked with a star (*) are mandatory</div>
+<br/>
+<?php 
+$message = "";
+if(0 < strlen($this->message))
+{
+	$class = $this->success? 'success' : 'failed';
+	$message = '<div class="title bold '.$class.'">'.$this->message.'</div>';
+}
+echo $message;
+echo $this->form;

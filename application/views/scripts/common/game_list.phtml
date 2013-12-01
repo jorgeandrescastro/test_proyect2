@@ -1,0 +1,49 @@
+<table class="list">
+	<thead class="title">
+		<tr>
+			<th>ID</th>
+			<th>Game</th>
+			<th>Category</th>
+			<th>Game Type</th>
+			<th>URL</th>
+			<th>Source Code Status</th>
+			<th>Edit</th>
+			<th>Configuration</th>
+			<th>OpenX Zones</th>
+			<th>AD Link</th>
+		</tr>
+	</thead>
+	<tbody class="subtitle">
+	<?php 
+	foreach ($this->games as $game) {
+		echo "<tr>";
+		echo "<td>" . $game->getId() . "</td>";
+		echo "<td>" . $game->getProject() . "</td>";
+		$category = "-";
+		if (($game->getCategory()))
+			$category = $game->getCategory()->getCategory();
+		echo "<td>" . $category . "</td>";
+		echo "<td>" . $game->getGameType() . "</td>";
+		echo "<td>" . $game->getUrl() . "</td>";
+		
+		$class = 'success';
+		$sourceStatus = "In SVN server";
+		if(strlen($game->getString3()) > 0) {
+			$class = 'failed';
+			$sourceStatus = 'Source is in the following location<br/>' . $game->getString3(); 
+		}
+		
+		echo '<td class="'.$class.'">' . $sourceStatus . '</td>';
+		$url = $this->url(array('controller' => 'index', 'action' => 'edit', 'id' => $game->getId()));
+		echo '<td><a href="'.$url.'" class="button">Edit</a></td>';
+		$url = $this->url(array('controller' => 'index', 'action' => 'configuration', 'id' => $game->getId()));
+		echo '<td><a href="'.$url.'" class="button">Scripts</a></td>';
+		$url = $this->url(array('controller' => 'index', 'action' => 'openxzone', 'id' => $game->getId()));
+		echo '<td><a href="'.$url.'" class="button">Assign</a></td>';
+		$url = $this->url(array('controller' => 'index', 'action' => 'adlink', 'id' => $game->getId()));
+		echo '<td><a href="'.$url.'" class="button">Construct</a></td>';
+		echo "</tr>";
+	}
+	?>
+	</tbody>
+</table>
